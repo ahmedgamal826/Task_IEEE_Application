@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'models/tracks_list.dart';
 
 class HomePage extends StatelessWidget {
@@ -10,8 +11,17 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: const Color(0xff024272),
-        leading:
-            IconButton(onPressed: () {}, icon: const Icon(Icons.arrow_back)),
+        leading: InkWell(
+            splashColor: Colors.white,
+            onTap: () {
+              print("IEEE Picture icon ");
+            },
+            child: Padding(
+              padding: const EdgeInsets.all(12),
+              child: SvgPicture.asset(
+                'assets/Back Icon.svg',
+              ),
+            )),
         title: Image.asset(
           'assets/IEEE.png',
           width: 98,
@@ -26,6 +36,7 @@ class HomePage extends StatelessWidget {
           const Text(
             'Tracks',
             style: TextStyle(
+                fontStyle: FontStyle.normal,
                 fontSize: 24,
                 fontWeight: FontWeight.w600,
                 fontFamily: 'Poppins'),
