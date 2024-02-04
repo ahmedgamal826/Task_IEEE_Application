@@ -14,7 +14,7 @@ class HomePage extends StatelessWidget {
         leading: InkWell(
             splashColor: Colors.white,
             onTap: () {
-              print("IEEE Picture icon ");
+              Navigator.pop(context);
             },
             child: Padding(
               padding: const EdgeInsets.all(12),
